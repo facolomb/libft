@@ -1,0 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: facolomb <marvin@42lausanne.ch>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/14 14:42:40 by facolomb          #+#    #+#             */
+/*   Updated: 2021/10/14 15:08:43 by facolomb         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+size_t	ft_strlen(const char *c);
+
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+{
+	size_t	i;
+	size_t	src_size;
+
+	i = 0;
+	src_size = ft_strlen(src);
+	while (i < dstsize)
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	return (src_size);
+}
