@@ -6,11 +6,11 @@
 /*   By: facolomb <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 14:04:14 by facolomb          #+#    #+#             */
-/*   Updated: 2021/10/13 13:31:33 by facolomb         ###   ########.fr       */
+/*   Updated: 2021/10/18 09:33:09 by facolomb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	isdigit(int c)
+int	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
 		return (1);

@@ -6,9 +6,10 @@
 /*   By: facolomb <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 17:10:06 by facolomb          #+#    #+#             */
-/*   Updated: 2021/10/14 09:36:47 by facolomb         ###   ########.fr       */
+/*   Updated: 2021/10/18 14:12:15 by facolomb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stddef.h>
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

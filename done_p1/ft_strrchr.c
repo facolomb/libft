@@ -6,9 +6,10 @@
 /*   By: facolomb <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 16:27:59 by facolomb          #+#    #+#             */
-/*   Updated: 2021/10/12 16:50:12 by facolomb         ###   ########.fr       */
+/*   Updated: 2021/10/18 14:02:51 by facolomb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stddef.h>
 
 char	*ft_strrchr(const char *str, int c)
 {

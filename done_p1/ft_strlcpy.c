@@ -6,9 +6,10 @@
 /*   By: facolomb <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 14:42:40 by facolomb          #+#    #+#             */
-/*   Updated: 2021/10/14 15:08:43 by facolomb         ###   ########.fr       */
+/*   Updated: 2021/10/18 16:13:30 by facolomb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stddef.h>
 
 size_t	ft_strlen(const char *c);
 
@@ -19,10 +20,11 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 
 	i = 0;
 	src_size = ft_strlen(src);
-	while (i < dstsize)
+	while (i < dstsize - 1)
 	{
 		dst[i] = src[i];
 		i++;
 	}
+	dst[i] = '\0';
 	return (src_size);
 }

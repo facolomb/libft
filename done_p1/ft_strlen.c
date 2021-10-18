@@ -6,9 +6,10 @@
 /*   By: facolomb <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 14:36:25 by facolomb          #+#    #+#             */
-/*   Updated: 2021/10/13 13:38:45 by facolomb         ###   ########.fr       */
+/*   Updated: 2021/10/18 11:41:16 by facolomb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stddef.h>
 
 size_t	ft_strlen(const char *c)
 {
