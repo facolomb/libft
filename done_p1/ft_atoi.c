@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_trim(const char *str)
+static char	*ft_trim(const char *str)
 {
 	char	*ret;
 
@@ -22,7 +22,7 @@ char	*ft_trim(const char *str)
 	return (ret);
 }
 
-int	ft_sign(const char *str)
+static int	ft_sign(const char *str)
 {
 	int	sign;
 

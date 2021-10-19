@@ -28,6 +28,8 @@ char *ft_strchr(const char *str, int c);
 char *ft_strrchr(const char *str, int c);
 int ft_strncmp(const char *s1, const char *s2, size_t n);
 size_t ft_strlcpy(char *dst, const char *src, size_t dstsize);
+size_t	ft_strlcat(char *dst, char *src, size_t size);
+int	ft_atoi(const char *str);
 
 int	main(void)
 {
@@ -37,6 +39,8 @@ int	main(void)
 	int		ret_c;
 	int		test_success;
 	int		ret_strcmp;
+	int		ret_atoi_ft;
+	int		ret_atoi_c;
 	char	str1[25];
 	char	str2[25];
 	char	*ret_str_ft;
@@ -45,9 +49,15 @@ int	main(void)
 	char	ncmp2[10];
 	char	ncmp3[10];
 	char	ncmp4[10];
-	char	*dst_ft;
-	char	*dst_c;
-	char 	*src;
+	char	*dst_lcpy_ft;
+	char	*dst_lcpy_c;
+	char 	*src_lcpy;
+	char	*src_lcat;
+	char	*dst_lcat_ft;
+	char	*dst_lcat_c;
+	char	*str1_atoi;
+	char	*str2_atoi;
+	char	*str3_atoi;
 
 	i = 0;
 	test_success = 0;
@@ -63,9 +73,15 @@ int	main(void)
 	strcpy(ncmp2, "adcgfed");
 	strcpy(ncmp3, "zyxwvu");
 	strcpy(ncmp4, "abcdef");
-	strcpy(src, "42 cpy bonjour");
-	dst_ft = malloc(15 * sizeof(char));
-	dst_c = malloc(15 * sizeof(char));
+	strcpy(src_lcpy, "42 cpy bonjour");
+	strcpy(src_lcat, "Les pommes, ");
+	strcpy(dst_lcat_ft, "c'est bon");
+	strcpy(dst_lcat_c, "c'est bon");
+	strcpy(str1_atoi, "-12354af54");
+	strcpy(str2_atoi, "+658fggr");
+	strcpy(str3_atoi, "  2147483647");
+	dst_lcpy_ft = malloc(15 * sizeof(char));
+	dst_lcpy_c = malloc(15 * sizeof(char));
 	//Test isalpha
 	printf("/******Test isalpa******\\\n");
 	while (i < 4)
@@ -261,22 +277,55 @@ int	main(void)
 	test_success = 0;
 	//Test strlcpy
 	printf("/******Test strlcpy******\\\n");
-	ret_ft = ft_strlcpy(dst_ft, src, 10);
-	ret_c = strlcpy(dst_c, src, 10);
-	ret_strcmp = strcmp(dst_ft, dst_c);
+	ret_ft = ft_strlcpy(dst_lcpy_ft, src_lcpy, 10);
+	ret_c = strlcpy(dst_lcpy_c, src_lcpy, 10);
+	ret_strcmp = strcmp(dst_lcpy_ft, dst_lcpy_c);
 	if (ret_ft == ret_c && ret_strcmp == 0)
 		printf("ft_strlcy : OK\n");
 	else
 	{
 		if (ret_strcmp != 0)
-			printf("chaine de characteres incorrect");
+			printf("chaine de characteres incorrect\n");
 		else
-			printf("taille retournee inccorect");
+			printf("taille retournee inccorect\n");
 		printf("ft_strlcpy : test failed\n");
 	}
+	//Reset value
+	free(dst_lcpy_ft);
+	free(dst_lcpy_c);
 	//Test strlcat
-	printf("/******Test strlcar******\\\n");
-	free(dst_ft);
-	free(dst_c);
+	printf("/******Test strlcat******\\\n");
+	ret_ft = ft_strlcat(dst_lcat_ft, src_lcat, 10);
+	ret_c = strlcat(dst_lcat_c, src_lcat, 10);
+	ret_strcmp = strcmp(dst_lcat_ft, dst_lcat_c);
+	if (ret_ft == ret_c && ret_strcmp == 0)
+		printf("ft_strlcat : OK\n");
+	else
+	{
+		if (ret_strcmp != 0)
+			printf("Chaine de characters incorrect\n");
+		else
+			printf("taille retournee incorrect\n");
+		printf("ft_strlcat : test failed\n");
+	}
+	//Test atoi
+	ret_atoi_ft = ft_atoi(str1_atoi);
+	ret_atoi_c = atoi(str1_atoi);
+	if (ret_atoi_ft == ret_atoi_c)
+		test_success++;
+	ret_atoi_ft = ft_atoi(str2_atoi);
+	ret_atoi_c = atoi(str2_atoi);
+	if (ret_atoi_ft == ret_atoi_c)
+		test_success++;
+	ret_atoi_ft = ft_atoi(str3_atoi);
+	ret_atoi_c = atoi(str3_atoi);
+	if (ret_atoi_ft == ret_atoi_c)
+		test_success++;
+	if (test_success == 3)
+		printf("ft_atoi : OK\n");
+	else
+		printf("ft_atoi : test failed\n");
+	//Reset value
+	test_success = 0;
 	return (0);
 }
