@@ -6,7 +6,7 @@
 /*   By: facolomb <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 14:46:06 by facolomb          #+#    #+#             */
-/*   Updated: 2021/10/21 14:18:27 by facolomb         ###   ########.fr       */
+/*   Updated: 2021/10/22 15:25:12 by facolomb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strchr(const char *str, int c)
 		}
 		str++;
 	}
-	if(c == '\0')
+	if (c == '\0')
 		return ((char *)str);
 	return (0);
 }

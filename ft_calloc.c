@@ -6,12 +6,12 @@
 /*   By: facolomb <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 10:12:41 by facolomb          #+#    #+#             */
-/*   Updated: 2021/10/22 10:17:34 by facolomb         ###   ########.fr       */
+/*   Updated: 2021/10/22 15:23:02 by facolomb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
 
-void ft_bzero(void *s, size_t n);
+void	ft_bzero(void *s, size_t n);
 
 void	*ft_calloc(size_t count, size_t size)
 {

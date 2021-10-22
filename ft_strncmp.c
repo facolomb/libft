@@ -6,14 +6,14 @@
 /*   By: facolomb <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 17:10:06 by facolomb          #+#    #+#             */
-/*   Updated: 2021/10/21 14:56:53 by facolomb         ###   ########.fr       */
+/*   Updated: 2021/10/22 15:25:50 by facolomb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stddef.h>
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int	i;
+	int				i;
 	unsigned char	*str1;
 	unsigned char	*str2;
 

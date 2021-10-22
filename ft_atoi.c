@@ -6,7 +6,7 @@
 /*   By: facolomb <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 09:28:05 by facolomb          #+#    #+#             */
-/*   Updated: 2021/10/21 17:05:33 by facolomb         ###   ########.fr       */
+/*   Updated: 2021/10/22 15:30:04 by facolomb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@ static char	*ft_trim(const char *str)
 {
 	char	*ret;
 
-	while (*str == ' ' || *str == '\t' || *str == '\v' || *str == '\f' || *str == '\r' || *str == '\n')
+	while (*str == ' ' || *str == '\t'
+		|| *str == '\v' || *str == '\f'
+		|| *str == '\r' || *str == '\n')
 	{
 		str++;
 	}

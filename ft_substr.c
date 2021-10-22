@@ -6,7 +6,7 @@
 /*   By: facolomb <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 09:03:19 by facolomb          #+#    #+#             */
-/*   Updated: 2021/10/21 17:39:38 by facolomb         ###   ########.fr       */
+/*   Updated: 2021/10/22 15:26:47 by facolomb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
@@ -19,7 +19,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char			*str;
 	size_t			str_len;
 	unsigned int	i;
-	
+
 	if (!s)
 		return (NULL);
 	str = malloc(len * sizeof(char) + 1);
@@ -27,7 +27,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	i = 0;
 	str_len = 0;
-	if(str == NULL)
+	if (str == NULL)
 		return (NULL);
 	while (i < start)
 	{

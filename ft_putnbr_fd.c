@@ -6,16 +6,16 @@
 /*   By: facolomb <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 10:24:56 by facolomb          #+#    #+#             */
-/*   Updated: 2021/10/22 10:35:16 by facolomb         ###   ########.fr       */
+/*   Updated: 2021/10/22 15:24:28 by facolomb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
 
-void ft_putchar_fd(char c, int fd);
+void	ft_putchar_fd(char c, int fd);
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	if (n == -2147483647 -1)
+	if (n == -2147483647 - 1)
 	{
 		write (fd, "-2147483648", 11);
 	}
