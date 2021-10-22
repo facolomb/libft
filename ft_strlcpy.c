@@ -1,42 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: facolomb <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/15 13:17:02 by facolomb          #+#    #+#             */
-/*   Updated: 2021/10/22 09:00:16 by facolomb         ###   ########.fr       */
+/*   Created: 2021/10/14 14:42:40 by facolomb          #+#    #+#             */
+/*   Updated: 2021/10/21 15:35:25 by facolomb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
+#include <stddef.h>
 
 size_t	ft_strlen(const char *c);
 
-char	*ft_strtrim(char const *s1, char const *s2)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	char	*str;
-	int		i;
-	int		x;
+	size_t	i;
+	size_t	src_size;
 
 	i = 0;
-	x = 0;
-	if (!s1 || !s2)
-		return (NULL);
-	str = malloc(ft_strlen(s1) * sizeof(char) + 1);
-	if (!str)
-		return (NULL);
-	while (*s1++ != '\0')
-	{
-		if (*s1 != s2[x])
-			str[i++] = *s1;
-		else
+	src_size = ft_strlen(src);
+	if (dstsize > 0)
+	{	
+		while (i < dstsize - 1 && src[i] != '\0')
 		{
-			while (*s1++ == s2[x])
-				x++;
-			x = 0;
+			dst[i] = src[i];
+			i++;
 		}
+		dst[i] = '\0';
 	}
-	str[i] = '\0';
-	return (str);
+	return (src_size);
 }

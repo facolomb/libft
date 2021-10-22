@@ -1,42 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: facolomb <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/15 13:17:02 by facolomb          #+#    #+#             */
-/*   Updated: 2021/10/22 09:00:16 by facolomb         ###   ########.fr       */
+/*   Created: 2021/10/21 10:24:56 by facolomb          #+#    #+#             */
+/*   Updated: 2021/10/22 10:35:16 by facolomb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
+#include <unistd.h>
 
-size_t	ft_strlen(const char *c);
+void ft_putchar_fd(char c, int fd);
 
-char	*ft_strtrim(char const *s1, char const *s2)
+void	ft_putnbr_fd(int n, int fd)
 {
-	char	*str;
-	int		i;
-	int		x;
-
-	i = 0;
-	x = 0;
-	if (!s1 || !s2)
-		return (NULL);
-	str = malloc(ft_strlen(s1) * sizeof(char) + 1);
-	if (!str)
-		return (NULL);
-	while (*s1++ != '\0')
+	if (n == -2147483647 -1)
 	{
-		if (*s1 != s2[x])
-			str[i++] = *s1;
-		else
-		{
-			while (*s1++ == s2[x])
-				x++;
-			x = 0;
-		}
+		write (fd, "-2147483648", 11);
 	}
-	str[i] = '\0';
-	return (str);
+	else
+	{
+		if (n < 0)
+		{
+			ft_putchar_fd('-', fd);
+			n = n * -1;
+		}
+		if (n >= 10)
+			ft_putnbr_fd(n / 10, fd);
+		ft_putchar_fd((n % 10) + '0', fd);
+	}
 }

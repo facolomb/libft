@@ -1,42 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: facolomb <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/15 13:17:02 by facolomb          #+#    #+#             */
-/*   Updated: 2021/10/22 09:00:16 by facolomb         ###   ########.fr       */
+/*   Created: 2021/10/21 10:21:08 by facolomb          #+#    #+#             */
+/*   Updated: 2021/10/22 10:37:40 by facolomb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
+#include <unistd.h>
 
-size_t	ft_strlen(const char *c);
-
-char	*ft_strtrim(char const *s1, char const *s2)
+void	ft_putstr_fd(char *s, int fd)
 {
-	char	*str;
-	int		i;
-	int		x;
+	int	i;
 
 	i = 0;
-	x = 0;
-	if (!s1 || !s2)
-		return (NULL);
-	str = malloc(ft_strlen(s1) * sizeof(char) + 1);
-	if (!str)
-		return (NULL);
-	while (*s1++ != '\0')
+	if (!s || !fd)
+		write(fd, "\0", 1);
+	else
 	{
-		if (*s1 != s2[x])
-			str[i++] = *s1;
-		else
+		while(s[i] != '\0')
 		{
-			while (*s1++ == s2[x])
-				x++;
-			x = 0;
+			write(fd, &s[i], 1);
+			i++;
 		}
 	}
-	str[i] = '\0';
-	return (str);
 }

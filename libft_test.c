@@ -6,7 +6,7 @@
 /*   By: facolomb <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 08:41:39 by facolomb          #+#    #+#             */
-/*   Updated: 2021/10/18 16:32:09 by facolomb         ###   ########.fr       */
+/*   Updated: 2021/10/20 11:01:49 by facolomb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <string.h>
@@ -30,6 +30,9 @@ int ft_strncmp(const char *s1, const char *s2, size_t n);
 size_t ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlcat(char *dst, char *src, size_t size);
 int	ft_atoi(const char *str);
+void *ft_memchr(const void *s, int c, size_t n);
+int ft_memcmp(const void *s1, const void *s2, size_t n);
+void *ft_memcpy(void *dst, const void *src, size_t n);
 
 int	main(void)
 {
@@ -39,25 +42,37 @@ int	main(void)
 	int		ret_c;
 	int		test_success;
 	int		ret_strcmp;
-	int		ret_atoi_ft;
-	int		ret_atoi_c;
+
 	char	str1[25];
 	char	str2[25];
-	char	*ret_str_ft;
-	char	*ret_str_c;
 	char	ncmp1[10];
 	char	ncmp2[10];
 	char	ncmp3[10];
 	char	ncmp4[10];
+	char 	src_lcpy[15];
+	char	src_lcat[15];
+	char	str1_atoi[15];
+	char	str2_atoi[15];
+	char	str3_atoi[15];
+	char	str1_memchr[15];
+	char	str2_memchr[15];
+	char	str3_memchr[15];
+	char	str1_memcpy[15];
+/*	char	str2_memcpy[15];
+	char	str3_memcpy[15];*/
+
+	char	*ret_str_ft;
+	char	*ret_str_c;
 	char	*dst_lcpy_ft;
 	char	*dst_lcpy_c;
-	char 	*src_lcpy;
-	char	*src_lcat;
-	char	*dst_lcat_ft;
-	char	*dst_lcat_c;
-	char	*str1_atoi;
-	char	*str2_atoi;
-	char	*str3_atoi;
+	char	dst_lcat_ft[25];
+	char	dst_lcat_c[25];
+	char	*ret_memchr_ft;
+	char	*ret_memchr_c;
+	char	dst_memcpy_ft[15];
+	char	dst_memcpy_c[15];
+	char	*ret_memcpy_ft;
+	char	*ret_memcpy_c;
 
 	i = 0;
 	test_success = 0;
@@ -80,8 +95,15 @@ int	main(void)
 	strcpy(str1_atoi, "-12354af54");
 	strcpy(str2_atoi, "+658fggr");
 	strcpy(str3_atoi, "  2147483647");
+	strcpy(str1_memchr, "xoplkfenubcse");
+	strcpy(str2_memchr, "LMfdsf3fsdcg");
+	strcpy(str3_memchr, "test null");
+	strcpy(str1_memcpy, "BxncH38J2u");
+/*	strcpy(str2_memcpy, "bJLK0LgZP6");
+	strcpy(str3_memcpy, "gSWFGyQCE8");*/
 	dst_lcpy_ft = malloc(15 * sizeof(char));
 	dst_lcpy_c = malloc(15 * sizeof(char));
+
 	//Test isalpha
 	printf("/******Test isalpa******\\\n");
 	while (i < 4)
@@ -309,17 +331,18 @@ int	main(void)
 		printf("ft_strlcat : test failed\n");
 	}
 	//Test atoi
-	ret_atoi_ft = ft_atoi(str1_atoi);
-	ret_atoi_c = atoi(str1_atoi);
-	if (ret_atoi_ft == ret_atoi_c)
+	printf("/******Test atoi******\\\n");
+	ret_ft = ft_atoi(str1_atoi);
+	ret_c = atoi(str1_atoi);
+	if (ret_ft == ret_c)
 		test_success++;
-	ret_atoi_ft = ft_atoi(str2_atoi);
-	ret_atoi_c = atoi(str2_atoi);
-	if (ret_atoi_ft == ret_atoi_c)
+	ret_ft = ft_atoi(str2_atoi);
+	ret_c = atoi(str2_atoi);
+	if (ret_ft == ret_c)
 		test_success++;
-	ret_atoi_ft = ft_atoi(str3_atoi);
-	ret_atoi_c = atoi(str3_atoi);
-	if (ret_atoi_ft == ret_atoi_c)
+	ret_ft = ft_atoi(str3_atoi);
+	ret_c = atoi(str3_atoi);
+	if (ret_ft == ret_c)
 		test_success++;
 	if (test_success == 3)
 		printf("ft_atoi : OK\n");
@@ -327,5 +350,64 @@ int	main(void)
 		printf("ft_atoi : test failed\n");
 	//Reset value
 	test_success = 0;
+	//Test memchr
+	printf("/******Test memchr******\\\n");
+	ret_memchr_ft = ft_memchr(str1_memchr, 'f', 15);
+	ret_memchr_c = memchr(str1_memchr, 'f', 15);
+	if (ret_memchr_ft == ret_memchr_c)
+		test_success++;
+	ret_memchr_ft = ft_memchr(str2_memchr, '3', 15);
+	ret_memchr_c = memchr(str2_memchr, '3', 15);
+	if (ret_memchr_ft == ret_memchr_c)
+		test_success++;
+	ret_memchr_ft = ft_memchr(str3_memchr, 'b', 15);
+	ret_memchr_c = memchr(str3_memchr, 'b', 15);
+	if (ret_memchr_ft == ret_memchr_c)
+		test_success++;
+	if (test_success == 3)
+		printf("ft_memchr : OK\n");
+	else
+		printf("ft_memchr : test failed\n");
+	//Reset value
+	test_success = 0;
+	//Test memcmp
+	printf("/******Test memcmp******\\\n");
+	ret_ft = ft_memcmp(ncmp1, ncmp2, 5);
+	ret_c = memcmp(ncmp1, ncmp2, 5);
+	if (ret_ft == ret_c)
+		test_success++;
+	ret_ft = ft_memcmp(ncmp1, ncmp3, 6);
+	ret_c = memcmp(ncmp1, ncmp3, 6);
+	if (ret_ft == ret_c)
+		test_success++;
+	ret_ft = ft_memcmp(ncmp1, ncmp4, 3);
+	ret_c = memcmp(ncmp1, ncmp4, 3);
+	if (ret_ft == ret_c)
+		test_success++;
+	ret_ft = ft_memcmp(ncmp2, ncmp4, 5);
+	ret_c = memcmp(ncmp2, ncmp4, 5);
+	if (ret_ft == ret_c)
+		test_success++;
+	if(test_success == 4)
+		printf("ft_memcmp : OK\n");
+	else
+		printf("ft_memcmp : test failed\n");
+	//Reset value
+	test_success = 0;
+	//Test memcpy
+	printf("/******Test memcpy******\\\n");
+	ret_memcpy_ft = ft_memcpy(dst_memcpy_ft, str1_memcpy, 11);
+	ret_memcpy_c = memcpy(dst_memcpy_c, str1_memcpy, 11);
+	ret_strcmp = strcmp(dst_memcpy_ft, dst_memcpy_c);
+	if (ret_memcpy_ft == ret_memcpy_c && ret_strcmp == 0)
+		printf("OK\n");
+	else
+		printf("NOPE\n");
+	printf("ret ft :%s\n", ret_memcpy_ft);
+	printf("ret c :%s\n", ret_memcpy_c);
+	printf("dst ft :%s\n", dst_memcpy_ft);
+	printf("dst c :%s\n", dst_memcpy_c);
+	//Reset value
+
 	return (0);
 }

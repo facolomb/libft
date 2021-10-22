@@ -1,18 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: facolomb <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/11 14:34:20 by facolomb          #+#    #+#             */
-/*   Updated: 2021/10/13 13:32:53 by facolomb         ###   ########.fr       */
+/*   Created: 2021/10/21 10:18:09 by facolomb          #+#    #+#             */
+/*   Updated: 2021/10/21 10:20:33 by facolomb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <unistd.h>
 
-int	ft_isprint(int c)
+void	ft_putchar_fd(char c, int fd)
 {
-	if (c > 32 && c < 127)
-		return (1);
-	return (0);
+	write(fd, &c, 1);
 }

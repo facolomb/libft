@@ -1,42 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: facolomb <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/15 13:17:02 by facolomb          #+#    #+#             */
-/*   Updated: 2021/10/22 09:00:16 by facolomb         ###   ########.fr       */
+/*   Created: 2021/10/13 16:56:49 by facolomb          #+#    #+#             */
+/*   Updated: 2021/10/21 13:56:27 by facolomb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
+#include <stddef.h>
 
-size_t	ft_strlen(const char *c);
-
-char	*ft_strtrim(char const *s1, char const *s2)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	char	*str;
-	int		i;
-	int		x;
+	char	*ret;
+	size_t	i;
 
+	ret = (char *) s;
 	i = 0;
-	x = 0;
-	if (!s1 || !s2)
-		return (NULL);
-	str = malloc(ft_strlen(s1) * sizeof(char) + 1);
-	if (!str)
-		return (NULL);
-	while (*s1++ != '\0')
+	while (*ret != '\0' && i < n)
 	{
-		if (*s1 != s2[x])
-			str[i++] = *s1;
-		else
+		if (*ret == c)
 		{
-			while (*s1++ == s2[x])
-				x++;
-			x = 0;
+			return (ret);
 		}
+		ret++;
+		i++;
 	}
-	str[i] = '\0';
-	return (str);
+	if (c == '\0')
+		return (ret);
+	return (0);
 }

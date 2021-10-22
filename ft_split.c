@@ -1,29 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: facolomb <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/12 16:27:59 by facolomb          #+#    #+#             */
-/*   Updated: 2021/10/18 14:02:51 by facolomb         ###   ########.fr       */
+/*   Created: 2021/10/20 12:14:41 by facolomb          #+#    #+#             */
+/*   Updated: 2021/10/22 14:25:31 by facolomb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stddef.h>
+#include <stdlib.h>
 
-char	*ft_strrchr(const char *str, int c)
+size_t	ft_strlen(const char *c);
+
+char	**ft_split(char const *s, char c)
 {
-	char	*ret;
+	char 	**str;
+	int		i;
+	int		x;
 
-	while (*str != '\0')
+	i = 0;
+	x = 0;
+	if (!s || !c)
+		return (NULL);
+	str = malloc(ft_strlen(s) * sizeof(char*) + 1);
+	if (!str)
+		return (NULL);
+	while(*s != '\0')
 	{
-		if (*str == c)
+		while(*s != c)
 		{
-			ret = (char *)str;
+			str[i][x] = *s;
+			s++;
+			x++;
 		}
-		str++;
+		str[i][x] = '\0';
+		i++;
+		x = 0;
 	}
-	if (ret != NULL)
-		return (ret);
-	return (0);
+	return (str);
 }

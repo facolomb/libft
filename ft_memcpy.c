@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: facolomb <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/12 14:46:06 by facolomb          #+#    #+#             */
-/*   Updated: 2021/10/12 16:19:15 by facolomb         ###   ########.fr       */
+/*   Created: 2021/10/12 09:47:52 by facolomb          #+#    #+#             */
+/*   Updated: 2021/10/21 13:53:02 by facolomb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stddef.h>
 
-char	*ft_strchr(const char *str, int c)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	while (*str != '\0')
+	size_t		i;
+	const char	*s;
+	char		*d;
+
+	s = (const char *) src;
+	d = (char *) dst;
+	i = 0;
+	if (s == NULL && d == NULL)
+		return (NULL);
+	while (i < n)
 	{
-		if (*str == c)
-		{
-			return ((char *)str);
-		}
-		str++;
+		d[i] = s[i];
+		i++;
 	}
-	return (0);
+	return (d);
 }

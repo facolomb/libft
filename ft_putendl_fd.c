@@ -1,29 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: facolomb <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/22 14:34:39 by facolomb          #+#    #+#             */
-/*   Updated: 2021/10/22 14:45:01 by facolomb         ###   ########.fr       */
+/*   Created: 2021/10/21 10:36:53 by facolomb          #+#    #+#             */
+/*   Updated: 2021/10/21 11:57:36 by facolomb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stddef.h>
+#include <unistd.h>
 
-void	*ft_memmove(void *dst, void *src, size_t len)
+void ft_putstr_fd(char *s, int fd);
+
+void	ft_putendl_fd(char *s, int fd)
 {
-	size_t	i;
-	char	*d;
-	char	*s;
-
-	i = 0;
-	d = (char *) dst;
-	s = (char *) src;
-	while (i < len)
-	{
-		d[i] = s[i];
-		i++;
-	}
-	return(d);
+	ft_putstr_fd(s, fd);
+	write(fd, "\n'", 1);
 }
