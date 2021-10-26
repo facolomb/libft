@@ -6,37 +6,86 @@
 /*   By: facolomb <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 12:14:41 by facolomb          #+#    #+#             */
-/*   Updated: 2021/10/22 14:25:31 by facolomb         ###   ########.fr       */
+/*   Updated: 2021/10/26 18:02:47 by facolomb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
 
 size_t	ft_strlen(const char *c);
 
-char	**ft_split(char const *s, char c)
+static int	ft_count_words(const char *s, char c)
 {
-	char 	**str;
+	int	is_found;
+	int	nb_word;
+
+	is_found = 0;
+	nb_word = 0;
+	while (*s != '\0')
+	{
+		if (*s != c && is_found == 0)
+		{
+			nb_word++;
+			is_found = 1;
+		}
+		else if (*s == c)
+			is_found = 0;
+		s++;
+	}
+	return (nb_word);
+}
+
+static char	*ft_stock_word(const char *s, int start, int end)
+{
 	int		i;
-	int		x;
+	char	*str;
 
 	i = 0;
-	x = 0;
-	if (!s || !c)
-		return (NULL);
-	str = malloc(ft_strlen(s) * sizeof(char*) + 1);
+	str = malloc((end - start + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
-	while(*s != '\0')
+	while (start < end)
 	{
-		while(*s != c)
-		{
-			str[i][x] = *s;
-			s++;
-			x++;
-		}
-		str[i][x] = '\0';
+		str[i] = s[start];
 		i++;
-		x = 0;
+		start++;
 	}
+	str[i] = '\0';
+	return (str);
+}
+
+static char	**ft_stock_in_str(const char *s, char c, char **str)
+{
+	int		start;
+	size_t	i;
+	int		y;
+
+	start = -1;
+	i = 0;
+	y = 0;
+	while (i <= ft_strlen(s))
+	{
+		if (s[i] != c && start < 0)
+			start = i;
+		else if ((s[i] == c || i == ft_strlen(s)) && start >= 0)
+		{
+			str[y++] = ft_stock_word(s, start, i);
+			start = -1;
+		}
+		i++;
+	}
+	str[y] = 0;
+	return (str);
+}
+
+char	**ft_split(const char *s, char c)
+{
+	char	**str;
+
+	if (!s)
+		return (NULL);
+	str = malloc((ft_count_words(s, c) + 1) * sizeof(char *));
+	if (!str)
+		return (NULL);
+	str = ft_stock_in_str(s, c, str);
 	return (str);
 }

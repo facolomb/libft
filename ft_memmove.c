@@ -6,7 +6,7 @@
 /*   By: facolomb <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 14:34:39 by facolomb          #+#    #+#             */
-/*   Updated: 2021/10/25 09:42:08 by facolomb         ###   ########.fr       */
+/*   Updated: 2021/10/26 16:38:54 by facolomb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stddef.h>
@@ -27,5 +27,5 @@ void	*ft_memmove(void *dst, void *src, size_t len)
 	}
 	else
 		ft_memcpy(dst, src, len);
-	return(dst);
+	return (dst);
 }

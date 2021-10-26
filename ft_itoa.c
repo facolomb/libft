@@ -6,7 +6,7 @@
 /*   By: facolomb <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 16:02:50 by facolomb          #+#    #+#             */
-/*   Updated: 2021/10/26 10:49:02 by facolomb         ###   ########.fr       */
+/*   Updated: 2021/10/26 16:50:45 by facolomb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
@@ -37,12 +37,23 @@ static int	ft_nb_len(int n)
 	return (i);
 }
 
+static char	*ft_convert_i_to_c(char *str, int n, int len)
+{
+	while (n > 0)
+	{
+		str[len--] = (n % 10) + '0';
+		n = n / 10;
+	}
+	return (str);
+}
+
 char	*ft_itoa(int n)
 {
 	char	*str;
 	int		len;
+
 	len = ft_nb_len(n);
-	if (n == -2147483647 -1)
+	if (n == -2147483647 - 1)
 		return (ft_strdup("-2147483648"));
 	str = (char *)malloc((len + 1) * sizeof(char));
 	if (!str)
@@ -58,10 +69,6 @@ char	*ft_itoa(int n)
 		str[0] = '0';
 		return (str);
 	}
-	while(n > 0)
-	{
-		str[len--] = (n % 10) + '0';
-		n = n / 10;
-	}
+	str = ft_convert_i_to_c(str, n, len);
 	return (str);
 }

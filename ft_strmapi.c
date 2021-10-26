@@ -6,7 +6,7 @@
 /*   By: facolomb <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 10:53:41 by facolomb          #+#    #+#             */
-/*   Updated: 2021/10/26 11:30:14 by facolomb         ###   ########.fr       */
+/*   Updated: 2021/10/26 16:43:28 by facolomb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
@@ -18,7 +18,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*str;
 	int		len;
 	int		i;
-	
+
 	if (!s)
 		return (NULL);
 	i = 0;
@@ -28,7 +28,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		return (NULL);
 	while (s[i] != '\0')
 	{
-		str[i] = (*f)(i , s[i]);
+		str[i] = (*f)(i, s[i]);
 		i++;
 	}
 	str[i] = '\0';
