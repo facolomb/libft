@@ -6,24 +6,26 @@
 /*   By: facolomb <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 14:34:39 by facolomb          #+#    #+#             */
-/*   Updated: 2021/10/22 14:45:01 by facolomb         ###   ########.fr       */
+/*   Updated: 2021/10/25 09:42:08 by facolomb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stddef.h>
 
+void	*ft_memcpy(void *dst, const void *src, size_t n);
+
 void	*ft_memmove(void *dst, void *src, size_t len)
 {
-	size_t	i;
-	char	*d;
-	char	*s;
-
-	i = 0;
-	d = (char *) dst;
-	s = (char *) src;
-	while (i < len)
+	if (!src && !dst)
+		return (NULL);
+	if (dst > src)
 	{
-		d[i] = s[i];
-		i++;
+		while (len > 0)
+		{
+			((char *)dst)[len - 1] = ((char *)src)[len - 1];
+			len--;
+		}
 	}
-	return(d);
+	else
+		ft_memcpy(dst, src, len);
+	return(dst);
 }

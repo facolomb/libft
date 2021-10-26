@@ -1,42 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: facolomb <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/14 09:51:32 by facolomb          #+#    #+#             */
-/*   Updated: 2021/10/25 09:52:29 by facolomb         ###   ########.fr       */
+/*   Created: 2021/10/25 08:52:01 by facolomb          #+#    #+#             */
+/*   Updated: 2021/10/25 08:59:23 by facolomb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stddef.h>
+#include <stdlib.h>
 
-size_t	ft_strlen(const char *c);
-
-size_t	ft_strlcat(char *dst, char *src, size_t size)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t	n;
-	int		i;
-	size_t	len_dst;
-	size_t	len_src;
-
-	len_dst = ft_strlen(dst);
-	len_src = ft_strlen(src);
-	n = 0;
+	size_t	i;
+	size_t	x;
+	
 	i = 0;
-	if (size > 0)
+	if (*needle == '\0')
+		return ((char *)haystack);
+	while (haystack[i] != '\0' && i < len)
 	{
-		while (dst[n] != '\0')
-			n++;
-		while (n < size - 1)
+		x = 0;
+		while (haystack[i + x] == needle[x] && i + x < len)
 		{
-			dst[n] = src[i];
-			n++;
-			i++;
+			x++;
+			if (needle[x] == '\0')
+				return ((char *)&haystack[i]);
 		}
-		dst[n] = '\0';
+		i++;
 	}
-	if (size < len_dst)
-		return (len_src + size);
-	return ((len_dst + len_src));
+	return (NULL);
 }

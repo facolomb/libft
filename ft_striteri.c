@@ -1,42 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: facolomb <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/14 09:51:32 by facolomb          #+#    #+#             */
-/*   Updated: 2021/10/25 09:52:29 by facolomb         ###   ########.fr       */
+/*   Created: 2021/10/26 11:30:54 by facolomb          #+#    #+#             */
+/*   Updated: 2021/10/26 11:38:56 by facolomb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stddef.h>
 
-size_t	ft_strlen(const char *c);
-
-size_t	ft_strlcat(char *dst, char *src, size_t size)
+void ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	size_t	n;
-	int		i;
-	size_t	len_dst;
-	size_t	len_src;
+	int	i;
 
-	len_dst = ft_strlen(dst);
-	len_src = ft_strlen(src);
-	n = 0;
 	i = 0;
-	if (size > 0)
+	if (s)
 	{
-		while (dst[n] != '\0')
-			n++;
-		while (n < size - 1)
+		while (s[i] != '\0')
 		{
-			dst[n] = src[i];
-			n++;
+			(*f)(i, s + i);
 			i++;
 		}
-		dst[n] = '\0';
 	}
-	if (size < len_dst)
-		return (len_src + size);
-	return ((len_dst + len_src));
 }
