@@ -6,12 +6,10 @@
 /*   By: facolomb <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 12:14:41 by facolomb          #+#    #+#             */
-/*   Updated: 2021/10/26 18:02:47 by facolomb         ###   ########.fr       */
+/*   Updated: 2021/10/27 09:42:04 by facolomb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
-
-size_t	ft_strlen(const char *c);
+#include "libft.h"
 
 static int	ft_count_words(const char *s, char c)
 {

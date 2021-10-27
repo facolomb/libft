@@ -6,16 +6,10 @@
 /*   By: facolomb <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 13:17:02 by facolomb          #+#    #+#             */
-/*   Updated: 2021/10/26 09:44:55 by facolomb         ###   ########.fr       */
+/*   Updated: 2021/10/27 09:45:23 by facolomb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
-#include <stddef.h>
-
-size_t	ft_strlen(const char *c);
-char	*ft_strchr(const char *str, int c);
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
-char	*ft_strdup(const char *s1);
+#include "libft.h"
 
 static int	ft_get_start(const char *s1, const char *set)
 {

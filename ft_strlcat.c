@@ -6,12 +6,10 @@
 /*   By: facolomb <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 09:51:32 by facolomb          #+#    #+#             */
-/*   Updated: 2021/10/25 09:52:29 by facolomb         ###   ########.fr       */
+/*   Updated: 2021/10/27 09:43:23 by facolomb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stddef.h>
-
-size_t	ft_strlen(const char *c);
+#include "libft.h"
 
 size_t	ft_strlcat(char *dst, char *src, size_t size)
 {

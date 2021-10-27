@@ -6,10 +6,10 @@
 /*   By: facolomb <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 10:21:08 by facolomb          #+#    #+#             */
-/*   Updated: 2021/10/22 15:24:51 by facolomb         ###   ########.fr       */
+/*   Updated: 2021/10/27 09:41:46 by facolomb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
+#include "libft.h"
 
 void	ft_putstr_fd(char *s, int fd)
 {

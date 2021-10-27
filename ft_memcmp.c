@@ -6,10 +6,10 @@
 /*   By: facolomb <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 09:13:26 by facolomb          #+#    #+#             */
-/*   Updated: 2021/10/21 14:05:08 by facolomb         ###   ########.fr       */
+/*   Updated: 2021/10/27 09:40:05 by facolomb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stddef.h>
+#include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {

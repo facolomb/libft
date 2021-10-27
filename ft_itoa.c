@@ -6,13 +6,10 @@
 /*   By: facolomb <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 16:02:50 by facolomb          #+#    #+#             */
-/*   Updated: 2021/10/26 16:50:45 by facolomb         ###   ########.fr       */
+/*   Updated: 2021/10/27 09:39:38 by facolomb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
-#include <stdio.h>
-
-char	*ft_strdup(const char *s1);
+#include "libft.h"
 
 static int	ft_nb_len(int n)
 {

@@ -6,12 +6,10 @@
 /*   By: facolomb <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 10:36:53 by facolomb          #+#    #+#             */
-/*   Updated: 2021/10/22 15:27:35 by facolomb         ###   ########.fr       */
+/*   Updated: 2021/10/27 09:41:20 by facolomb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
-
-void	ft_putstr_fd(char *s, int fd);
+#include "libft.h"
 
 void	ft_putendl_fd(char *s, int fd)
 {

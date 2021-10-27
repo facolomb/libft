@@ -6,13 +6,10 @@
 /*   By: facolomb <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 09:03:19 by facolomb          #+#    #+#             */
-/*   Updated: 2021/10/22 15:26:47 by facolomb         ###   ########.fr       */
+/*   Updated: 2021/10/27 09:45:36 by facolomb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
-#include <stddef.h>
-
-size_t	ft_strlen(const char *c);
+#include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {

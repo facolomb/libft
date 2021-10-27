@@ -6,12 +6,10 @@
 /*   By: facolomb <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 14:34:39 by facolomb          #+#    #+#             */
-/*   Updated: 2021/10/26 16:38:54 by facolomb         ###   ########.fr       */
+/*   Updated: 2021/10/27 09:40:37 by facolomb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stddef.h>
-
-void	*ft_memcpy(void *dst, const void *src, size_t n);
+#include "libft.h"
 
 void	*ft_memmove(void *dst, void *src, size_t len)
 {

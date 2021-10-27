@@ -6,10 +6,10 @@
 /*   By: facolomb <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 08:52:01 by facolomb          #+#    #+#             */
-/*   Updated: 2021/10/26 16:43:49 by facolomb         ###   ########.fr       */
+/*   Updated: 2021/10/27 09:45:05 by facolomb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {

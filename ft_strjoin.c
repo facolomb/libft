@@ -6,12 +6,10 @@
 /*   By: facolomb <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:19:55 by facolomb          #+#    #+#             */
-/*   Updated: 2021/10/22 08:42:39 by facolomb         ###   ########.fr       */
+/*   Updated: 2021/10/27 09:43:08 by facolomb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
-
-size_t	ft_strlen(const char *c);
+#include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

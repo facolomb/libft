@@ -6,10 +6,10 @@
 /*   By: facolomb <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 09:26:20 by facolomb          #+#    #+#             */
-/*   Updated: 2021/10/13 15:37:44 by facolomb         ###   ########.fr       */
+/*   Updated: 2021/10/27 09:37:46 by facolomb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stddef.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

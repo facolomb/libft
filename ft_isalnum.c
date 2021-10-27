@@ -6,9 +6,10 @@
 /*   By: facolomb <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 14:07:20 by facolomb          #+#    #+#             */
-/*   Updated: 2021/10/13 13:32:03 by facolomb         ###   ########.fr       */
+/*   Updated: 2021/10/27 09:38:15 by facolomb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
 int	ft_isalnum(int c)
 {

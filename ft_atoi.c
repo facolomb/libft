@@ -6,9 +6,10 @@
 /*   By: facolomb <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 09:28:05 by facolomb          #+#    #+#             */
-/*   Updated: 2021/10/25 10:39:55 by facolomb         ###   ########.fr       */
+/*   Updated: 2021/10/27 09:37:33 by facolomb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
 static char	*ft_trim(const char *str)
 {

@@ -6,12 +6,10 @@
 /*   By: facolomb <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 10:53:41 by facolomb          #+#    #+#             */
-/*   Updated: 2021/10/26 16:43:28 by facolomb         ###   ########.fr       */
+/*   Updated: 2021/10/27 09:44:22 by facolomb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
-
-size_t	ft_strlen(const char *c);
+#include "libft.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {

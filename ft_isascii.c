@@ -6,9 +6,10 @@
 /*   By: facolomb <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 14:18:48 by facolomb          #+#    #+#             */
-/*   Updated: 2021/10/13 13:32:29 by facolomb         ###   ########.fr       */
+/*   Updated: 2021/10/27 09:38:41 by facolomb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
 int	ft_isascii(int c)
 {
