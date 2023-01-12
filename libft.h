@@ -6,7 +6,7 @@
 /*   By: facolomb <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 09:17:14 by facolomb          #+#    #+#             */
-/*   Updated: 2021/10/27 09:30:18 by facolomb         ###   ########.fr       */
+/*   Updated: 2021/10/27 10:49:05 by facolomb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ char	*ft_strchr(const char *str, int c);
 char	*ft_strdup(const char *s1);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_strjoin(char const *s1, char const *s2);
-size_t	ft_strlcat(char *dst, char *src, size_t size);
+size_t	ft_strlcat(char *dst, const char *src, size_t size);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlen(const char *c);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
